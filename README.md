@@ -28,8 +28,6 @@ First, establish a connection to your OMOP CDM database:
 library(pviOutcomes)
 library(DBI)
 library(odbc)
-
-library(pviOutcomes)
 library(DatabaseConnector)
 
 # Step 1: Set up JDBC driver path
