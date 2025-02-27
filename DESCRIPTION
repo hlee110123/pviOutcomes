@@ -1,0 +1,22 @@
+Package: pviOutcomes
+Title: Analysis of PVI Treatment Outcomes
+Version: 0.1.0
+Authors@R: 
+    person("Your", "Name", email = "your.email@example.com", role = c("aut", "cre"))
+Description: Provides functions to retrieve and analyze patient data for early
+    versus non-early peripheral vascular intervention (PVI) treatment outcomes.
+    The package connects to an OMOP CDM database, retrieves patient cohorts,
+    and performs statistical analysis on key outcomes including CLTI, repeat PVI,
+    and amputation rates.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: DBI, odbc, dplyr, stats, knitr, broom, utils,
+        DatabaseConnector
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3
+NeedsCompilation: no
+Packaged: 2025-02-27 06:00:29 UTC; idies
+Author: Your Name [aut, cre]
+Maintainer: Your Name <your.email@example.com>
