@@ -31,7 +31,7 @@ library(odbc)
 
 # Connect using DBI/odbc
 conn <- create_db_connection(
-  dbms = "sql server",
+  dbms = "your dbms",
   server = "your_server",
   user = "your_username",
   password = "your_password",
@@ -40,7 +40,7 @@ conn <- create_db_connection(
 
 # Or connect using DatabaseConnector
 # conn <- create_db_connection(
-#   dbms = "sql server",
+#   dbms = "your dbms",
 #   server = "your_server",
 #   user = "your_username",
 #   password = "your_password",
@@ -54,7 +54,7 @@ conn <- create_db_connection(
 # Run the complete analysis
 results <- pvi_outcome_analysis(
   conn = conn, 
-  schema = "omop.data", 
+  schema = "your database schema", 
   early_cohort_id = #,      #  early PVI cohort ID
   non_early_cohort_id = #,  # non-early PVI cohort ID
   file_path = "pvi_outcome_results.csv"  # Optional: save results to CSV
@@ -71,7 +71,7 @@ you can run the analysis step by step
 # 1. Retrieve patient data
 patient_data <- get_patient_outcomes(
   conn = conn,
-  schema = "omop.data",
+  schema = "your database schema", 
   early_cohort_id = #,      #  early PVI cohort ID
   non_early_cohort_id = #,  # non-early PVI cohort ID
   outcome_window = 183,       # Days after cohort start to begin tracking outcomes
