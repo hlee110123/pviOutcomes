@@ -29,25 +29,23 @@ library(pviOutcomes)
 library(DBI)
 library(odbc)
 
-# Connect using DBI/odbc
+library(pviOutcomes)
+library(DatabaseConnector)
 
-conn <- create_db_connection(
-  dbms = "your dbms",
-  server = "your_server",
+# Step 1: Set up JDBC driver path
+Sys.setenv(DATABASECONNECTOR_JAR_FOLDER = "path/to/jdbc/drivers")
+
+# Step 2: Create database connection details
+connectionDetails <- createConnectionDetails(
+  dbms = "your dbms",         # or "postgresql", "oracle", etc.
+  server = "your_server_name", 
   user = "your_username",
   password = "your_password",
-  database = "your_database"
+  port = 1433                  # Optional: specify port
 )
 
-# Or connect using DatabaseConnector
-# conn <- create_db_connection(
-#   dbms = "your dbms",
-#   server = "your_server",
-#   user = "your_username",
-#   password = "your_password",
-#   use_dbi = FALSE,
-#   pathToDriver = "/path/to/jdbc/drivers"
-# )
+# Step 3: Connect to the database
+conn <- connect(connectionDetails)
 ```
 
 # 2. Run the Entire Analysis in One Step
